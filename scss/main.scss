@@ -1,3 +1,77 @@
 @import 'vendors/normalize';
 @import 'vendors/html5';
-@import 'base/background';
+// GRIDS
+// @import '../bower_components/susy/sass/_susy.scss';
+// @import '../bower_components/breakpoint/breakpoint/breakpoint';
+@import '../node_modules/gridle/sass/gridle/gridle';
+@import 'base/variables';
+@import 'base/settings';
+@import 'base/functions';
+
+html {
+  background-color: get-color(cold-grey);
+}
+
+header {
+  background-color: get-color(dark-grey);
+  height: $base-line-height*4;
+}
+
+.contain {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logo {
+  float: left;
+  padding-top: $base-line-height;
+  img {
+    height: $base-line-height*2;
+  }
+}
+
+nav{
+  ul {
+    float:right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    float: left;
+    margin: 0 0 0 auto;
+    padding: $base-line-height 0 0 $base-line-height*2;
+  }
+  a {
+    @include type-setting(1);
+    font-weight: 400;
+    text-decoration: none;
+    color: get-color(white);
+  }
+}
+
+h1 {
+  @include type-setting(4);
+  font-weight: 700;
+}
+h2 {
+  @include type-setting(3);
+  font-weight: 300;
+}
+h3 {
+  @include type-setting(2);
+  font-weight: 400;
+}
+h4 {
+  @include type-setting(1);
+  font-weight: 700;
+}
+p {
+  @include type-setting(0);
+  font-weight: 400;
+}
+h5 {
+  @include type-setting(-1);
+  font-weight: 700;
+}

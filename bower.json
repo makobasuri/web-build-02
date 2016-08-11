@@ -1,0 +1,31 @@
+{
+  "name": "web-build-01",
+  "description": "Simple gulp builder for Websites using html5 boilerplate with a bunch of tools for css (running sass) optimization, along with imagemin and uglify.",
+  "main": "index.js",
+  "authors": [
+    "makobasuri"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "front-end",
+    "simple",
+    "gulp",
+    "build",
+    "sass",
+    "sourcemaps",
+    "uglify",
+    "browsersync"
+  ],
+  "homepage": "https://github.com/makobasuri/web-build-02",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "^2.2.12",
+    "breakpoint": "^4.6.4"
+  }
+}

@@ -10,6 +10,7 @@ var ucss = require('gulp-uncss');
 var nano = require('gulp-cssnano');
 var imgm = require('gulp-imagemin');
 var gdel = require('del');
+var reld = sync.reload;
 
 var autoprefixerOptions = {
   browsers: ['last 3 versions', '> 5%', 'Firefox ESR']
@@ -27,7 +28,8 @@ gulp.task('styles', function(){
   .pipe(apre(autoprefixerOptions))
   .pipe(nano())
   .pipe(maps.write('../css/maps'))
-  .pipe(gulp.dest('css'));
+  .pipe(gulp.dest('css'))
+  .pipe(reld({stream: true}));
 });
 
 //Uglify task

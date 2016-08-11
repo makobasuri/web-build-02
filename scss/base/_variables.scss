@@ -1,0 +1,44 @@
+// Colors
+
+$colors: (
+  primary: rgb(41, 170, 225),
+  dark-grey: rgb(77, 77, 77),
+  cold-grey: rgb(221, 235, 237),
+  salmon: rgb(233, 102, 86),
+  white: rgb(252, 252, 252),
+  black: rbg(3, 3, 3),
+);
+
+// Typography
+
+$base-font: 'Roboto', sans-serif;
+
+$base-font-size: 1rem;
+$base-line-height: 1.25 * $base-font-size;
+
+$type-settings: (
+  -1: (
+    font-size: 0.75rem,
+    line-height: $base-line-height
+  ),
+  0: (
+    font-size: 1rem,
+    line-height: $base-line-height
+  ),
+  1: (
+    font-size: 1.333rem,
+    line-height: $base-line-height * 2
+  ),
+  2: (
+    font-size: 1.778rem,
+    line-height: $base-line-height * 2
+  ),
+  3: (
+    font-size: 2.369rem,
+    line-height: $base-line-height * 2
+  ),
+  4: (
+    font-size: 3.157rem,
+    line-height: $base-line-height * 4
+  ),
+);

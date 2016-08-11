@@ -1,0 +1,27 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $base-font;
+  font-weight: 300;
+}
+
+// gridle_setup
+@include gridle_setup( (
+    context : 12,
+    gutter-width : 20px,
+) );
+
+// media queries
+@include gridle_register_state ( mobile , (
+    max-width : 480px
+) );
+@include gridle_register_state ( tablet , (
+    min-width : 481px,
+    max-width : 1024px
+) ) ;
+
+@include gridle_generate_classes();

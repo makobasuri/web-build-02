@@ -9,6 +9,7 @@ html {
   font-weight: 300;
 }
 
+/*
 // gridle_setup
 @include gridle_setup( (
     context : 12,
@@ -25,3 +26,13 @@ html {
 ) ) ;
 
 @include gridle_generate_classes();
+*/
+
+// Susy Setup
+$susy: (
+  columns: 12,
+  container: 1120px,
+  global-box-sizing: border-box
+  );
+
+@include border-box-sizing;

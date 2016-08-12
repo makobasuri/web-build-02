@@ -1,12 +1,12 @@
 // Colors
 
 $colors: (
-  primary: rgb(41, 170, 225),
-  dark-grey: rgb(77, 77, 77),
-  cold-grey: rgb(221, 235, 237),
-  salmon: rgb(233, 102, 86),
-  white: rgb(252, 252, 252),
-  black: rbg(3, 3, 3),
+  primary: rgba(41, 170, 225, 1),
+  dark-grey: rgba(77, 77, 77, 1),
+  cold-grey: rgba(221, 235, 237, 1),
+  salmon: rgba(233, 102, 86, 1),
+  m-wht: rgba(252, 252, 252, 1),
+  m-blck: rgba(10, 10, 10, 1),
 );
 
 // Typography
@@ -27,7 +27,7 @@ $type-settings: (
   ),
   1: (
     font-size: 1.333rem,
-    line-height: $base-line-height * 2
+    line-height: $base-line-height
   ),
   2: (
     font-size: 1.778rem,

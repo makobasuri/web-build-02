@@ -26,6 +26,10 @@
   ],
   "dependencies": {
     "susy": "^2.2.12",
-    "breakpoint": "^4.6.4"
+    "breakpoint": "^4.6.4",
+    "neat": "^1.8.0",
+    "jeet": "^6.1.4",
+    "jquery": "^3.1.0",
+    "normalize-css": "^4.2.0"
   }
 }

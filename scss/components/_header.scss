@@ -1,0 +1,36 @@
+/*
+====================================
+== Header and Navigation
+====================================
+*/
+
+.logo {
+  flex: 2 auto;
+  img {
+    height: $base-line-height*2;
+  }
+}
+nav{
+  flex: 1;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    @include type-setting(1);
+    font-weight: 400;
+    text-decoration: none;
+    color: $m-wht;
+  }
+}
+
+.nav-item {
+  transition: border-color 1s ease;
+  border-bottom: 3px solid;
+  border-color: rgba(255,255,255,0);
+  &:hover {
+    border-bottom: 3px solid;
+    border-color: rgba(255,255,255,1);
+  }
+}

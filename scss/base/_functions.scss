@@ -1,40 +1,6 @@
 /*
-** Color functions from https://paulund.co.uk/colours-with-sass-map:
-*/
-
-// Just changed colour to color, to prevent my inevitable typing errors.
-
-// Enables get-color
-@function get-color($color) {
-
-  @if map-has-key($colors, $color) {
-    $color: map-get($colors, $color);
-  } @else {
-    @if type-of($color) != color {
-      @error "Color name: `#{$color}` not found.";
-    }
-  }
-
-  @return $color;
-}
-
-
-// Creates classes of the same name
-@each $colorName, $color in $colors {
-    .text-#{$colorName}
-    {
-        color: $color;
-    }
-
-    .bg-#{$colorName}
-    {
-        background: $color;
-    }
-}
-
-/*
 ** Typography by David Khourshid http://codepen.io/davidkpiano/pen/gapLgq
-*/ 
+*/
 @function type-scale($level) {
   @return map-get(
     map-get($type-settings, $level), 'font-size');

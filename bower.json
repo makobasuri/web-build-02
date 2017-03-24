@@ -1,6 +1,6 @@
 {
   "name": "web-build-01",
-  "description": "Simple gulp builder for Websites using html5 boilerplate with a bunch of tools for css (running sass) optimization, along with imagemin and uglify.",
+  "description": "Simple gulp builder for Websites using html5 boilerplate with a tools for scss optimization.",
   "main": "index.js",
   "authors": [
     "makobasuri"
@@ -27,8 +27,6 @@
   "dependencies": {
     "susy": "^2.2.12",
     "breakpoint": "^4.6.4",
-    "neat": "^1.8.0",
-    "jeet": "^6.1.4",
     "jquery": "^3.1.0",
     "normalize-css": "^4.2.0"
   }

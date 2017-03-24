@@ -1,16 +1,12 @@
 // Colors
-
-$colors: (
-  primary: rgba(41, 170, 225, 1),
-  dark-grey: rgba(77, 77, 77, 1),
-  cold-grey: rgba(221, 235, 237, 1),
-  salmon: rgba(233, 102, 86, 1),
-  m-wht: rgba(252, 252, 252, 1),
-  m-blck: rgba(10, 10, 10, 1),
-);
+  $primary: rgba(41, 170, 225, 1);
+  $dark-grey: rgba(77, 77, 77, 1);
+  $cold-grey: rgba(221, 235, 237, 1);
+  $salmon: rgba(233, 102, 86, 1);
+  $m-wht: rgba(252, 252, 252, 1);
+  $m-blck: rgba(10, 10, 10, 1);
 
 // Typography
-
 $base-font: 'Roboto', sans-serif;
 
 $base-font-size: 1rem;

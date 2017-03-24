@@ -1,0 +1,34 @@
+/*
+====================================
+== General globals and sections
+====================================
+*/
+
+html {
+  background-color: $cold-grey;
+}
+
+header {
+  background-color: $m-blck;
+  padding: $base-line-height 0 $base-line-height 0;
+}
+
+footer {
+  background-color: $m-blck;
+  color: $dark-grey;
+  height: auto;
+  padding: $base-line-height 0 $base-line-height 0;
+}
+
+section{
+    padding: $base-line-height 0 $base-line-height*2 0;
+}
+
+.section__light {
+  background-color: $cold-grey;
+  color: $m-blck;
+}
+.section__dark {
+  background-color: $dark-grey;
+  color: $m-wht;
+}

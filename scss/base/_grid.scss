@@ -1,0 +1,38 @@
+/*
+====================================
+== Custom Grid
+====================================
+*/
+
+$contained-gap-size: 20;
+
+.contained {
+  margin: 0;
+  padding: 0 #{$contained-gap-size}px;
+}
+
+.contained-row {
+  display: block;
+  margin: 0 #{0 - ($contained-gap-size * 0.5)}px;
+  padding: 0;
+}
+
+%col {
+  float: left;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 #{($contained-gap-size * 0.5)}px;
+}
+
+.contained-col-1-12 {
+  @extend %col;
+  width: percentage( 1 / 12 );
+}
+
+/*
+====================================
+== Custom Grid 2
+====================================
+*/
+

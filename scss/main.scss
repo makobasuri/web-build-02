@@ -1,158 +1,19 @@
+// Vendors
 @import 'vendors/normalize';
 @import 'vendors/html5';
-// GRIDS
+
+// Susy
 @import '../bower_components/susy/sass/susy';
-// @import '../bower_components/breakpoint/breakpoint/breakpoint';
-// @import '../node_modules/gridle/sass/gridle/gridle';
+
+// Base
 @import 'base/variables';
 @import 'base/settings';
 @import 'base/functions';
+@import 'base/grid';
+@import 'base/grid-custom';
+@import 'base/typography';
 
-
-
-/*
-====================================
-== General globals and sections
-====================================
-*/
-
-html {
-  background-color: get-color(cold-grey);
-}
-
-header {
-  background-color: get-color(m-blck);
-  padding: $base-line-height 0 $base-line-height 0;
-}
-
-footer {
-  background-color: get-color(m-blck);
-  color: get-color(dark-grey);
-  height: auto;
-  padding: $base-line-height 0 $base-line-height 0;
-}
-
-section{
-    padding: $base-line-height 0 $base-line-height*2 0;
-}
-
-.section__light {
-  background-color: get-color(cold-grey);
-  color: get-color(m-blck);
-}
-.section__dark {
-  background-color: get-color(dark-grey);
-  color: get-color(m-wht);
-}
-
-
-
-/*
-====================================
-== Grids and stuff
-====================================
-*/
-
-.contain {
-  @include container;
-}
-
-.flex-row {
-  display: flex;
-  align-items: center;
-}
-
-
-
-/*
-====================================
-== Typography
-====================================
-*/
-
-h1, h2, h3, h4, h5 {
-  text-rendering: optimizeLegibility;
-  // margin: 0;
-}
-h1 {
-  @include type-setting(4);
-  font-weight: 700;
-}
-h2 {
-  @include type-setting(3);
-  font-weight: 300;
-  letter-spacing: 2px;
-}
-h3 {
-  @include type-setting(2);
-  font-weight: 400;
-  letter-spacing: 1px;
-}
-h4 {
-  @include type-setting(1);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  opacity: 0.87;
-}
-p {
-  @include type-setting(0);
-  font-weight: 400;
-  opacity: 0.87;
-}
-h5 {
-  @include type-setting(-1);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-
-
-/*
-====================================
-== Header and Navigation
-====================================
-*/
-
-.logo {
-  flex: 2 auto;
-  img {
-    height: $base-line-height*2;
-  }
-}
-nav{
-  flex: 1;
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-  }
-  a {
-    @include type-setting(1);
-    font-weight: 400;
-    text-decoration: none;
-    color: get-color(m-wht);
-  }
-}
-
-.nav-item {
-  transition: border-color 1s ease;
-  border-bottom: 3px solid;
-  border-color: rgba(255,255,255,0);
-  &:hover {
-    border-bottom: 3px solid;
-    border-color: rgba(255,255,255,1);
-  }
-}
-/*
-====================================
-== Components
-====================================
-*/
-
-.features--item {
-  @include span(3);
-  &:last-child {
-      @include last;
-  }
-}
+// Components
+@import 'components/general';
+@import 'components/header';
+@import 'components/features';

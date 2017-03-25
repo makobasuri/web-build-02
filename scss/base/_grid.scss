@@ -1,38 +1,62 @@
 /*
 ====================================
-== Custom Grid
+== Grids and stuff
 ====================================
 */
 
-$contained-gap-size: 20;
+$gr-gutter: 3%;
 
-.contained {
-  margin: 0;
-  padding: 0 #{$contained-gap-size}px;
+@mixin container {
+	padding: $base-font-size 5%;
+
+	@media #{$medium-and-up} {
+		padding: $base-font-size 8%;
+	}
+
+	@media #{$large-and-up} {
+		padding: $base-font-size 15%;
+	}
 }
 
-.contained-row {
-  display: block;
-  margin: 0 #{0 - ($contained-gap-size * 0.5)}px;
-  padding: 0;
+@mixin row {
+	width: 100%;
+
+	// Clearfix
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 }
 
-%col {
-  float: left;
-  display: block;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 #{($contained-gap-size * 0.5)}px;
+@mixin float-column {
+	float: left;
+	margin-right: $gr-gutter;
+	min-height: 1px;
+
+	&:last-child {
+		margin-right: 0%;
+	}
 }
 
-.contained-col-1-12 {
-  @extend %col;
-  width: percentage( 1 / 12 );
+$number-of-column-spans: (
+	1: ((100% / 12) - ($gr-gutter * 11 / 12)),
+	2: ((100% / 6) - ($gr-gutter * 10 / 12)),
+	3: ((100% / 4) - ($gr-gutter * 9 / 12)),
+	4: ((100% / 3) - ($gr-gutter * 8 / 12)),
+	5: ((100% / 2.4) - ($gr-gutter * 7 / 12)),
+	6: ((100% / 2) - ($gr-gutter * 6 / 12)),
+	7: ((100% / 1.714285714285714) - ($gr-gutter * 5 / 12)),
+	8: ((100% / 1.5) - ($gr-gutter * 4 / 12)),
+	9: ((100% / 1.333333333333333) - ($gr-gutter * 3 / 12)),
+	10: ((100% / 1.2) - ($gr-gutter * 2 / 12)),
+	11: ((100% / 1.090909090909091) - ($gr-gutter * 1 / 12)),
+	12: (100%)
+);
+
+@mixin col($span-number) {
+	@if map-has-key($number-of-column-spans, $span-number) {
+		@include float-column;
+		width: #{map-get($number-of-column-spans, $span-number)};
+	}
 }
-
-/*
-====================================
-== Custom Grid 2
-====================================
-*/
-

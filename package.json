@@ -19,7 +19,6 @@
   "author": "makobasuri",
   "license": "ISC",
   "devDependencies": {
-    "bower": "^1.7.9",
     "browser-sync": "^2.14.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
@@ -32,5 +31,8 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-uncss": "^1.0.6"
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0"
   }
 }

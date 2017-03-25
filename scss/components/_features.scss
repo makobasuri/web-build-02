@@ -5,8 +5,5 @@
 */
 
 .features--item {
-  @include span(3);
-  &:last-child {
-      @include last;
-  }
+	@include col(3);
 }

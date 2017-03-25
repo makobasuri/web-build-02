@@ -2,15 +2,12 @@
 @import 'vendors/normalize';
 @import 'vendors/html5';
 
-// Susy
-@import '../bower_components/susy/sass/susy';
-
 // Base
 @import 'base/variables';
 @import 'base/settings';
 @import 'base/functions';
 @import 'base/grid';
-@import 'base/grid-custom';
+@import 'base/grid-classes';
 @import 'base/typography';
 
 // Components

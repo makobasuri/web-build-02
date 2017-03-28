@@ -3,46 +3,17 @@ $primary: rgba(41, 170, 225, 1);
 $dark-grey: rgba(77, 77, 77, 1);
 $cold-grey: rgba(221, 235, 237, 1);
 $salmon: rgba(233, 102, 86, 1);
+
 $m-wht: rgba(252, 252, 252, 1);
+$m-wht-87: rgba(252, 252, 252, 0.87);
+
 $m-blck: rgba(10, 10, 10, 1);
 
 // Typography
 $base-font: 'Roboto', sans-serif;
 
-$base-font-size: 18px;
-$base-line-height: 1.25 * $base-font-size;
-
-$type-settings: (
-	-1: (
-		font-size: 0.75rem,
-		line-height: $base-line-height
-	),
-
-	0: (
-		font-size: 1rem,
-		line-height: $base-line-height
-	),
-
-	1: (
-		font-size: 1.333rem,
-		line-height: $base-line-height
-	),
-
-	2: (
-		font-size: 1.778rem,
-		line-height: $base-line-height * 2
-	),
-
-	3: (
-		font-size: 2.369rem,
-		line-height: $base-line-height * 2
-	),
-
-	4: (
-		font-size: 3.157rem,
-		line-height: $base-line-height * 4
-	),
-);
+$base-fs: 16px;
+$base-line-height: 1.25 * $base-fs;
 
 // Media Querries
 

@@ -1,12 +1,10 @@
 html {
 	box-sizing: border-box;
+	font-family: $base-font;
+	font-size: $base-fs;
+	font-weight: 300;
 }
 
 *, *:before, *:after {
 	box-sizing: inherit;
-}
-
-html {
-	font-family: $base-font;
-	font-weight: 300;
 }

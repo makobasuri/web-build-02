@@ -15,6 +15,12 @@ var autoprefixerOptions = {
 	browsers: ['last 3 versions', '> 5%', 'Firefox ESR']
 };
 
+gulp.task('normalize', function(){
+	gulp.src('node_modules/normalize.css/normalize.css')
+	.pipe(nano())
+	.pipe(gulp.dest('css/vendors'))
+});
+
 //Styles task
 gulp.task('styles', function(){
 	gulp.src('scss/**/*.scss')
@@ -24,8 +30,7 @@ gulp.task('styles', function(){
 	.pipe(apre(autoprefixerOptions))
 	.pipe(nano())
 	.pipe(maps.write('../css/maps'))
-	.pipe(gulp.dest('css'))
-	.pipe(reld({stream: true}));
+	.pipe(gulp.dest('css'));
 });
 
 //Uglify task
@@ -41,12 +46,17 @@ gulp.task('uglify', function(){
 // task that ensures compiling is complete before
 // reloading browsers
 gulp.task('js-watch', ['uglify'], function(done){
-	reld();
 	done();
+	reld();
+});
+
+gulp.task('css-watch', ['styles'], function(done){
+	done();
+	reld();
 });
 
 // Watch JS and Sass and BrowserSync
-gulp.task('serve', ['uglify', 'styles'], function () {
+gulp.task('serve', ['uglify', 'normalize', 'styles'], function () {
 
 	// Serve files from the root of this project
 	sync.init({
@@ -56,7 +66,7 @@ gulp.task('serve', ['uglify', 'styles'], function () {
 	});
 
 	gulp.watch('js/*.js', ['js-watch']);
-	gulp.watch('scss/**/*.scss', ['styles']);
+	gulp.watch('scss/**/*.scss', ['css-watch']);
 	gulp.watch('./*.html').on('change', sync.reload);
 });
 
@@ -97,7 +107,7 @@ gulp.task('copy', function(){
 });
 
 //Build task
-gulp.task('build', ['clean', 'image', 'copy'])
+gulp.task('build', ['normalize', 'styles', 'uglify', 'clean', 'image', 'copy'])
 
 //Default task
-gulp.task('default', ['styles', 'uglify', 'serve']);
+gulp.task('default', ['serve']);

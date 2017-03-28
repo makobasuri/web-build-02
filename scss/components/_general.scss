@@ -4,21 +4,17 @@
 ====================================
 */
 
-html {
-	font-size: $base-font-size;
-	background-color: $cold-grey;
-}
-
 header {
+	@include container;
+	padding-top: 0;
+	padding-bottom: 0;
 	background-color: $m-blck;
-	padding: $base-line-height 0 $base-line-height 0;
 }
 
 footer {
+	@include container;
 	background-color: $m-blck;
 	color: $dark-grey;
-	height: auto;
-	padding: $base-line-height 0 $base-line-height 0;
 }
 
 section{

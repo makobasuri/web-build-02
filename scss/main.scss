@@ -1,16 +1,17 @@
-// Vendors
-@import 'vendors/normalize';
-@import 'vendors/html5';
-
 // Base
 @import 'base/variables';
 @import 'base/settings';
-@import 'base/functions';
+@import 'base/typo-system';
+@import 'base/materialshadows';
 @import 'base/grid';
 @import 'base/grid-classes';
 @import 'base/typography';
 
 // Components
 @import 'components/general';
+@import 'components/hero';
 @import 'components/header';
 @import 'components/features';
+
+// Elements
+@import 'elements/buttons';

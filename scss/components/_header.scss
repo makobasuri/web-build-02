@@ -4,33 +4,49 @@
 ====================================
 */
 
-.logo {
-  flex: 2 auto;
-  img {
-    height: $base-line-height*2;
-  }
+.flex-row {
+	display: flex;
+	justify-content: flex-end;
 }
-nav{
-  flex: 1;
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-  }
-  a {
-    @include type-setting(1);
-    font-weight: 400;
-    text-decoration: none;
-    color: $m-wht;
-  }
+
+.logo {
+	flex: 2 auto;
+	padding-top: $base-fs;
+	padding-bottom: $base-fs;
+
+	img {
+		height: 48px;
+	}
+}
+
+nav {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	a {
+		@include type-setting(1);
+		padding-top: $base-fs + 4;
+		padding-bottom: $base-fs;
+		height: 100%;
+		min-width: 120px;
+		font-size: 24px;
+		line-height: 1.5;
+		font-weight: 400;
+		text-align: center;
+		text-decoration: none;
+		color: $m-wht;
+	}
 }
 
 .nav-item {
-  transition: border-color 1s ease;
-  border-bottom: 3px solid;
-  border-color: rgba(255,255,255,0);
-  &:hover {
-    border-bottom: 3px solid;
-    border-color: rgba(255,255,255,1);
-  }
+	transition: border-color 1s ease;
+	border-bottom: 4px solid;
+	border-color: rgba(255, 255, 255, 0);
+
+	&:hover {
+		border-bottom: 3px solid;
+		border-color: rgba(255, 255, 255, 1);
+	}
 }

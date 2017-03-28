@@ -1,20 +1,22 @@
 /*
 ====================================
-== Grids and stuff
+== Grid and Layout related things
 ====================================
 */
 
 $gr-gutter: 3%;
 
 @mixin container {
-	padding: $base-font-size 5%;
+	padding: $base-fs 5%;
 
 	@media #{$medium-and-up} {
-		padding: $base-font-size 8%;
+		padding-right: 8%;
+		padding-left: 8%;
 	}
 
 	@media #{$large-and-up} {
-		padding: $base-font-size 15%;
+		padding-right: 15%;
+		padding-left: 15%;
 	}
 }
 

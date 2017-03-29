@@ -39,6 +39,7 @@ gulp.task('uglify', function(){
 	.pipe(plmb())
 	.pipe(maps.init())
 	.pipe(ugly())
+	.pipe(conc('scripts.js'))
 	.pipe(maps.write('../minjs/maps'))
 	.pipe(gulp.dest('minjs'));
 });
@@ -98,8 +99,10 @@ gulp.task('copy', function(){
 		'*.ico',
 		'img/**/*',
 		'css/**/*',
+		!'css/maps',
 		'fonts/**/*',
 		'minjs/**/*',
+		!'minjs/maps',
 		'js/vendor/*.*'
 	],{
 		"base" : "./"

@@ -13,4 +13,5 @@ Thumbs.db
 # And more #
 ############
 node_modules/
-
+css/
+build/

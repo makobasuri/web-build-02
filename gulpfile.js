@@ -56,7 +56,7 @@ gulp.task('css-watch', ['styles'], function(done){
 });
 
 // Watch JS and Sass and BrowserSync
-gulp.task('serve', ['uglify', 'normalize', 'styles'], function () {
+gulp.task('serve', ['uglify', 'styles'], function () {
 
 	// Serve files from the root of this project
 	sync.init({
@@ -74,9 +74,9 @@ gulp.task('serve', ['uglify', 'normalize', 'styles'], function () {
 
 //Image compression task
 gulp.task('image', function(){
-	gulp.src('img/*')
+	gulp.src('imgsrc/*')
 	.pipe(imgm())
-	.pipe(gulp.dest('build/img'));
+	.pipe(gulp.dest('img'));
 });
 
 //Clean Build directory
@@ -96,6 +96,7 @@ gulp.task('copy', function(){
 		'*.xml',
 		'*.txt',
 		'*.ico',
+		'img/**/*',
 		'css/**/*',
 		'fonts/**/*',
 		'minjs/**/*',
@@ -110,4 +111,4 @@ gulp.task('copy', function(){
 gulp.task('build', ['normalize', 'styles', 'uglify', 'clean', 'image', 'copy'])
 
 //Default task
-gulp.task('default', ['serve']);
+gulp.task('default', ['normalize', 'serve']);

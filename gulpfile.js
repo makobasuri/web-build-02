@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var rseq = require('run-sequence');
 var sass = require('gulp-sass');
 var apre = require('gulp-autoprefixer');
 var sync = require('browser-sync').create();
@@ -99,10 +100,10 @@ gulp.task('copy', function(){
 		'*.ico',
 		'img/**/*',
 		'css/**/*',
-		!'css/maps',
+		'!css/maps{,/**}',
 		'fonts/**/*',
 		'minjs/**/*',
-		!'minjs/maps',
+		'!minjs/maps{,/**}',
 		'js/vendor/*.*'
 	],{
 		"base" : "./"
@@ -111,7 +112,11 @@ gulp.task('copy', function(){
 });
 
 //Build task
-gulp.task('build', ['normalize', 'styles', 'uglify', 'clean', 'image', 'copy'])
+gulp.task('build', function(cb) {
+	rseq('clean',
+	['normalize', 'styles', 'uglify', 'image',],
+	'copy', cb)
+});
 
 //Default task
 gulp.task('default', ['normalize', 'serve']);

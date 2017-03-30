@@ -17,14 +17,14 @@ var autoprefixerOptions = {
 };
 
 gulp.task('normalize', function(){
-	gulp.src('node_modules/normalize.css/normalize.css')
+	return gulp.src('node_modules/normalize.css/normalize.css')
 	.pipe(nano())
 	.pipe(gulp.dest('css/vendors'))
 });
 
 //Styles task
 gulp.task('styles', function(){
-	gulp.src('scss/**/*.scss')
+	return gulp.src('scss/**/*.scss')
 	.pipe(plmb())
 	.pipe(maps.init())
 	.pipe(sass({includePaths: ['scss']}))
@@ -36,7 +36,10 @@ gulp.task('styles', function(){
 
 //Uglify task
 gulp.task('uglify', function(){
-	gulp.src('js/*.js')
+	return gulp.src([
+		//'js/vendors/vendorfile.js',
+		'js/main.js'
+	])
 	.pipe(plmb())
 	.pipe(maps.init())
 	.pipe(ugly())
@@ -45,31 +48,23 @@ gulp.task('uglify', function(){
 	.pipe(gulp.dest('minjs'));
 });
 
-// task that ensures compiling is complete before
-// reloading browsers
-gulp.task('js-watch', ['uglify'], function(done){
-	done();
-	reld();
-});
-
-gulp.task('css-watch', ['styles'], function(done){
-	done();
-	reld();
-});
-
 // Watch JS and Sass and BrowserSync
-gulp.task('serve', ['uglify', 'styles'], function () {
-
-	// Serve files from the root of this project
+gulp.task('serve', function () {
 	sync.init({
 		server: {
 			baseDir: "./"
-		}
+		},
+		files: [
+			'css/*.css',
+			'js/*.js',
+			'./*.html'
+		]
 	});
+});
 
-	gulp.watch('js/*.js', ['js-watch']);
-	gulp.watch('scss/**/*.scss', ['css-watch']);
-	gulp.watch('./*.html').on('change', sync.reload);
+gulp.task('watch', function() {
+	gulp.watch('js/*.js', ['uglify']);
+	gulp.watch('scss/**/*.scss', ['styles']);
 });
 
 //Release-build Tasks
@@ -119,4 +114,4 @@ gulp.task('build', function(cb) {
 });
 
 //Default task
-gulp.task('default', ['normalize', 'serve']);
+gulp.task('default', ['normalize', 'watch', 'serve']);

@@ -14,5 +14,6 @@ Thumbs.db
 ############
 node_modules/
 css/
+minjs/
 build/
 fonts/

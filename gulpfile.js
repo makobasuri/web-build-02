@@ -22,6 +22,11 @@ gulp.task('normalize', function(){
 	.pipe(gulp.dest('css/vendors'))
 });
 
+gulp.task('fonts', function() {
+	return gulp.src('node_modules/mdi/fonts/*.*')
+	.pipe(gulp.dest('fonts'))
+});
+
 //Styles task
 gulp.task('styles', function(){
 	return gulp.src('scss/**/*.scss')
@@ -52,11 +57,12 @@ gulp.task('uglify', function(){
 gulp.task('serve', function () {
 	sync.init({
 		server: {
-			baseDir: "./"
+			baseDir: "./",
+			index: "video.html"
 		},
 		files: [
 			'css/*.css',
-			'js/*.js',
+			'minjs/*.js',
 			'./*.html'
 		]
 	});
@@ -94,6 +100,7 @@ gulp.task('copy', function(){
 		'*.txt',
 		'*.ico',
 		'img/**/*',
+		'assets/**/*',
 		'css/**/*',
 		'!css/maps{,/**}',
 		'fonts/**/*',
@@ -109,9 +116,9 @@ gulp.task('copy', function(){
 //Build task
 gulp.task('build', function(cb) {
 	rseq('clean',
-	['normalize', 'styles', 'uglify', 'image',],
+	['normalize', 'fonts', 'styles', 'uglify', 'image',],
 	'copy', cb)
 });
 
 //Default task
-gulp.task('default', ['normalize', 'watch', 'serve']);
+gulp.task('default', ['normalize', 'fonts', 'uglify', 'styles', 'watch', 'serve']);

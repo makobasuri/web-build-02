@@ -7,11 +7,14 @@
 @import 'base/grid-classes';
 @import 'base/typography';
 
+@import 'node_modules/mdi/scss/materialdesignicons';
+
 // Components
 @import 'components/general';
 @import 'components/hero';
 @import 'components/header';
 @import 'components/features';
+@import 'components/video';
 
 // Elements
 @import 'elements/buttons';

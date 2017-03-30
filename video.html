@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Video Player</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/vendors/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<main>
+		<div class="hero hero--video">
+			<h1><i class="mdi mdi-arrow-right-drop-circle"></i>Title</h1>
+			<video id="video-id">
+				<source src="assets/small.mp4" type="video/mp4" alt="video from techslides.com" />
+			</video>
+			<div class="video-controls">
+				<button id="restart">
+					<i class="mdi mdi-24px mdi-restart"></i>
+				</button>
+				<button id="rew">
+					<i class="mdi mdi-24px mdi-chevron-double-left"></i>
+				</button>
+				<button id="play">
+					<i class="mdi mdi-24px mdi-arrow-right-drop-circle"></i>
+				</button>
+				<button id="fastFwd">
+					<i class="mdi mdi-24px mdi-chevron-double-right"></i>
+				</button>
+			</div>
+		</div>
+	</main>
+
+	<script src="minjs/scripts.js"></script>
+</body>
+</html>

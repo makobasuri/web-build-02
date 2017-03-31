@@ -14,22 +14,21 @@
 	<main>
 		<div class="hero hero--video">
 			<h1><i class="mdi mdi-arrow-right-drop-circle"></i>Title</h1>
-			<video id="video-id">
-				<source src="assets/small.mp4" type="video/mp4" alt="video from techslides.com" />
-			</video>
-			<div class="video-controls">
-				<button id="restart">
-					<i class="mdi mdi-24px mdi-restart"></i>
-				</button>
-				<button id="rew">
-					<i class="mdi mdi-24px mdi-chevron-double-left"></i>
-				</button>
-				<button id="play">
-					<i class="mdi mdi-24px mdi-arrow-right-drop-circle"></i>
-				</button>
-				<button id="fastFwd">
-					<i class="mdi mdi-24px mdi-chevron-double-right"></i>
-				</button>
+			<div class="cm-video">
+				<video id="video-id">
+					<source src="assets/small.mp4" type="video/mp4" alt="video from techslides.com" />
+				</video>
+				<div class="video-controls">
+					<button id="restart">
+						<i class="mdi mdi-24px mdi-restart"></i>
+					</button>
+					<button id="play">
+						<i class="mdi mdi-24px mdi-arrow-right-drop-circle"></i>
+					</button>
+					<div id="progress-bar" class="progress-bar">
+						<span id="progress-bar--fill" class="progress-bar--fill">0% Played</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>

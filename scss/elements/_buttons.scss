@@ -6,6 +6,10 @@
 
 button {
 	border: 0 none;
+	background: none;
+}
+
+.btn {
 	border-radius: $base-fs * 0.25;
 	padding: $base-fs $base-fs * 1.5;
 	font-weight: 500;

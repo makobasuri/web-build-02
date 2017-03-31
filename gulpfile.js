@@ -16,6 +16,11 @@ var autoprefixerOptions = {
 	browsers: ['last 3 versions', '> 5%', 'Firefox ESR']
 };
 
+var onError = function (err) {
+	console.log(err.toString());
+	this.emit('end');
+};
+
 gulp.task('normalize', function(){
 	return gulp.src('node_modules/normalize.css/normalize.css')
 	.pipe(nano())
@@ -30,7 +35,7 @@ gulp.task('fonts', function() {
 //Styles task
 gulp.task('styles', function(){
 	return gulp.src('scss/**/*.scss')
-	.pipe(plmb())
+	.pipe(plmb(onError))
 	.pipe(maps.init())
 	.pipe(sass({includePaths: ['scss']}))
 	.pipe(apre(autoprefixerOptions))
@@ -45,7 +50,7 @@ gulp.task('uglify', function(){
 		//'js/vendors/vendorfile.js',
 		'js/main.js'
 	])
-	.pipe(plmb())
+	.pipe(plmb(onError))
 	.pipe(maps.init())
 	.pipe(ugly())
 	.pipe(conc('scripts.js'))

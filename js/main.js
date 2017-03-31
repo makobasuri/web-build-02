@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		var video = document.getElementById('video-id');
 		var playPauseButton = document.getElementById('play');
 		var restartButton = document.getElementById('restart');
-		var forwardButton = document.getElementById('fastFwd');
-		var rewindButton = document.getElementById('rew');
+		var progressBar = document.getElementById('progress-bar');
+		var progressBarFill = document.getElementById('progress-bar--fill');
 
 		this.vidplay = function() {
 			if (video.paused) {
@@ -25,17 +25,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		this.restart = function() {
 			video.currentTime = 0;
+			progressBar.value = 0;
 		}
 
-		this.skip = function(value) {
-			video.currentTime += value;
-			console.log(value);
+		this.progressBarClick = function(e) {
+			var fillRect = progressBar.getBoundingClientRect();
+			var progressClicked = e.clientX - fillRect.left;
+			var totalProgress = progressBar.clientWidth;
+			var calcProgress = Math.floor((100 / totalProgress) * progressClicked);
+
+			video.currentTime = calcProgress * (video.duration / 100);
+			updateProgressBar();
+		}
+
+		this.updateProgressBar = function() {
+			var percentage = Math.floor((100 / video.duration) * video.currentTime);
+			progressBarFill.style.width = percentage + '%';
+			progressBarFill.innerHTML = percentage + '% played';
 		}
 
 		playPauseButton.addEventListener('click', this.vidplay, false);
 		restartButton.addEventListener('click', this.restart, false);
-		rewindButton.addEventListener('click', this.skip(-2), false);
-		forwardButton.addEventListener('click', this.skip(2), false);
+		video.addEventListener('timeupdate', updateProgressBar, false);
+		progressBar.addEventListener('click', this.progressBarClick, false);
 	}
 
 	VideoPlayer();

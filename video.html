@@ -11,22 +11,43 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+	<header>
+		<div class="contain">
+			<div class="flex-row">
+				<div class="logo">
+					<img src="img/mmakobasurilogo4.png" alt="makobasuri's logo">
+				</div>
+				<nav>
+					<a class="nav-item" href="#">Portfolio</a>
+					<a class="nav-item" href="#">About</a>
+					<a class="nav-item" href="#">Contact</a>
+				</nav>
+			</div>
+		</div>
+	</header>
 	<main>
 		<div class="hero hero--video">
 			<h1><i class="mdi mdi-arrow-right-drop-circle"></i>Title</h1>
-			<div class="cm-video">
-				<video id="video-id">
+			<div class="module-video">
+				<video>
 					<source src="assets/small.mp4" type="video/mp4" alt="video from techslides.com" />
 				</video>
-				<div class="video-controls">
-					<button id="restart">
+				<div class="video--controls">
+					<button class="vc-restart">
 						<i class="mdi mdi-24px mdi-restart"></i>
 					</button>
-					<button id="play">
+					<button class="vc-play">
 						<i class="mdi mdi-24px mdi-arrow-right-drop-circle"></i>
 					</button>
-					<div id="progress-bar" class="progress-bar">
-						<span id="progress-bar--fill" class="progress-bar--fill">0% Played</span>
+					<div class="vc-progress-bar">
+						<span class="vc-progress-bar--fill">0% Played</span>
+					</div>
+					<button class="vc-sound">
+						<i class="mdi mdi-24px mdi-volume-high"></i>
+					</button>
+					<div class="vc-volume-bar">
+						<div class="volume-bar-bckg"></div>
+						<span class="vc-volume-bar--fill">0% Volume</span>
 					</div>
 				</div>
 			</div>

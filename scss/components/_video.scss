@@ -9,7 +9,7 @@
 	justify-content: space-around;
 }
 
-.cm-video {
+.module-video {
 	position: relative;
 	width: 50%;
 	min-width: 300px;
@@ -20,7 +20,7 @@ video {
 	width: 100%;
 }
 
-.video-controls {
+.video--controls {
 	position: absolute;
 	bottom: 0;
 	display: flex;
@@ -36,7 +36,7 @@ video {
 	}
 }
 
-.progress-bar {
+.vc-progress-bar {
 	flex: 1 1 auto;
 	align-self: center;
 	margin-left: 8px;
@@ -48,10 +48,43 @@ video {
 	overflow: hidden;
 }
 
-.progress-bar--fill {
+.vc-progress-bar--fill {
 	display: block;
-	width: 80%;
 	height: 100%;
 	text-indent: -9999px;
 	background: $m-wht;
 }
+
+.vc-volume-bar {
+	position: relative;
+	align-self: center;
+	margin-left: 8px;
+	margin-right: 8px;
+	width: 40px;
+	height: 24px;
+	overflow: hidden;
+}
+
+.vc-volume-bar-bckg {
+	position: absolute;
+	clip: rect(0, 20px, 40px, 0);
+	width: 40px;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 50px 100px;
+	border-color: transparent transparent $m-wht transparent;
+	line-height: 0;
+}
+
+.vc-volume-bar--fill {
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 20px 40px;
+	border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+	text-indent: -9999px;
+	line-height: 0;
+}
+

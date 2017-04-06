@@ -47,7 +47,7 @@ gulp.task('styles', function(){
 //Uglify task
 gulp.task('uglify', function(){
 	return gulp.src([
-		//'js/vendors/vendorfile.js',
+		'js/video.js',
 		'js/main.js'
 	])
 	.pipe(plmb(onError))

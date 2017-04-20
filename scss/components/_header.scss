@@ -4,44 +4,53 @@
 ====================================
 */
 
-.flex-row {
+$header-background: $m-blck;
+$nav-item-link: $m-wht-87;
+$nav-item-hover: $grey-c;
+$nav-item-focus: $pure-white;
+$nav-transition: 0.2s ease-in-out;
+
+header {
+	background-color: $header-background;
+}
+
+.header-flex {
 	display: flex;
+	flex-direction: column;
 	justify-content: flex-end;
 }
 
 .logo {
 	flex: 2 auto;
-	padding-top: $base-fs;
-	padding-bottom: $base-fs;
+	padding: $base-fs;
 
 	img {
 		height: 48px;
 	}
 }
 
-nav {
+.nav {
 	flex: 1;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-	a {
-		@include type-setting(1);
-		padding-top: $base-fs + 4;
-		padding-bottom: $base-fs;
-		height: 100%;
-		min-width: 120px;
-		font-size: 24px;
-		line-height: 1.5;
-		font-weight: 400;
-		text-align: center;
-		text-decoration: none;
-		color: $m-wht;
-	}
 }
 
 .nav-item {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
 	position: relative;
+	padding-bottom: $base-fs;
+	height: 100%;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $nav-item-link;
+	transition: color $nav-transition;
 
 	&::before {
 		content: '';
@@ -50,15 +59,69 @@ nav {
 		bottom: 0;
 		left: 50%;
 		height: 4px;
-		background-color: rgba(255, 255, 255, 1);
-		transition: left 0.2s ease-in-out, right 0.2s ease-in-out;
+		background-color: $nav-item-hover;
+		transition: left $nav-transition, right $nav-transition;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: 50%;
+		bottom: 0;
+		left: 50%;
+		height: 4px;
+		background-color: $nav-item-focus;
+		transition: left $nav-transition, right $nav-transition;
 	}
 
 	&:hover {
+		color: $nav-item-hover;
 
 		&::before {
 			right: 0%;
 			left: 0%;
 		}
+	}
+
+	&:focus,
+	&:active {
+		color: $nav-item-focus;
+
+		&::after {
+			right: 0;
+			left: 0;
+		}
+	}
+}
+
+.nav--wrap {
+
+	.nav-item {
+		flex-wrap: wrap;
+	}
+}
+
+@media #{$medium-and-up} {
+
+	header {
+		@include container;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.header-flex {
+		flex-direction: row;
+	}
+
+	.logo {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.nav-item {
+		padding-top: $base-fs;
+		padding-bottom: $base-fs;
+		width: auto;
+		min-width: 120px;
 	}
 }

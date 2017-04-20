@@ -4,13 +4,6 @@
 ====================================
 */
 
-header {
-	@include container;
-	padding-top: 0;
-	padding-bottom: 0;
-	background-color: $m-blck;
-}
-
 footer {
 	@include container;
 	background-color: $m-blck;

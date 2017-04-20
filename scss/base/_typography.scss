@@ -4,51 +4,60 @@
 ====================================
 */
 
+$h1-fs: $base-fs * 3;
+$h2-fs: $base-fs * 2.25;
+$h3-fs: $base-fs * 1.5;
+$h4-fs: $base-fs * 1.25;
+$h5-fs: $base-fs;
+
 h1, h2, h3, h4, h5 {
 	text-rendering: optimizeLegibility;
-	margin-top: 0;
+	line-height: 1.1;
 }
 
 p {
 	margin-top: 0;
+	margin-bottom: $base-fs * 0.5;
+	font-size: $base-fs;
+	line-height: 1.25;
 }
 
 h1 {
-	@include type-setting(4);
+	margin-top: $h1-fs * 0.5;
+	margin-bottom: $h1-fs * 0.4;
+	font-size: $h1-fs;
 	font-weight: 700;
 	letter-spacing: 4px;
-	opacity: 0.87;
 }
 
 h2 {
-	@include type-setting(3);
+	margin-top: $h2-fs * 0.5;
+	margin-bottom: $h2-fs * 0.4;
+	font-size: $h2-fs;
 	font-weight: 300;
 	letter-spacing: 2px;
-	opacity: 0.87;
 }
 
 h3 {
-	@include type-setting(2);
+	margin-top: $h3-fs * 0.5;
+	margin-bottom: $h3-fs * 0.4;
+	font-size: $h3-fs;
 	font-weight: 400;
 	letter-spacing: 1px;
-	opacity: 0.87;
 }
 
 h4 {
-	@include type-setting(1);
+	margin-top: $h4-fs * 0.5;
+	margin-bottom: $h4-fs * 0.4;
+	font-size: $h4-fs;
 	font-weight: 700;
 	letter-spacing: 0.5px;
-	opacity: 0.87;
-}
-
-p {
-	@include type-setting(0);
-	font-weight: 400;
-	opacity: 0.87;
 }
 
 h5 {
-	@include type-setting(-1);
+	margin-top: $h5-fs * 0.5;
+	margin-bottom: $h5-fs * 0.4;
+	font-size: $h5-fs;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;

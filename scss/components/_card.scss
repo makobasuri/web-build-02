@@ -1,0 +1,92 @@
+/*
+====================================
+== Card component
+====================================
+*/
+
+$card-action-border: $grey-c;
+$card-link: #1c9eb2;
+$card-link-focus: #048e8c;
+$card-transition: 0.2 ease-in-out;
+
+.card {
+	@include z-depth(1);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: $base-fs * 2;
+	border-radius: $base-fs * 0.25;
+	background-color: $m-wht-87;
+	overflow: hidden;
+}
+
+.card__impression {
+	position: relative;
+	height: 160px;
+}
+
+.card__img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.card__title {
+	position: absolute;
+	bottom: $base-fs * 0.5;
+	margin: 0;
+	padding-left: $base-fs;
+}
+
+.card__content {
+	padding: $base-fs $base-fs 0 $base-fs;
+}
+
+.card__action {
+	display: flex;
+	padding-left: $base-fs;
+	border-top: 1px solid $card-action-border;
+	height: 56px;
+	align-content: center;
+}
+
+.action-link {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 0 1 auto;
+	height: 100%;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: $card-link;
+	transition: color $card-transition;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $card-link-focus;
+	}
+
+	&+.action-link {
+		margin-left: $base-fs * 2;
+	}
+}
+
+@media #{$medium-and-up} {
+	.card {
+		flex-direction: row;
+		height: 240px;
+	}
+
+	.card__impression {
+		flex: 1 1 auto;
+		height: 100%;
+	}
+
+	.card__information {
+		display: flex;
+		flex: 1 1 70%;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}

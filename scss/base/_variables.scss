@@ -4,6 +4,12 @@ $dark-grey: rgba(77, 77, 77, 1);
 $cold-grey: rgba(221, 235, 237, 1);
 $salmon: rgba(233, 102, 86, 1);
 
+$pure-white: #fff;
+$pure-black: #000;
+$grey-3: #333;
+$grey-9: #999;
+$grey-c: #ccc;
+
 $m-wht: rgba(252, 252, 252, 1);
 $m-wht-87: rgba(252, 252, 252, 0.87);
 
@@ -12,9 +18,8 @@ $m-blck-87: rgba(10, 10, 10, 0.87);
 
 // Typography
 $base-font: 'Roboto', sans-serif;
-
 $base-fs: 16px;
-$base-line-height: 1.25 * $base-fs;
+$base-line-height: 1.25;
 
 // Media Querries
 

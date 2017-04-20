@@ -2,9 +2,18 @@ html {
 	box-sizing: border-box;
 	font-family: $base-font;
 	font-size: $base-fs;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 *, *:before, *:after {
 	box-sizing: inherit;
+}
+
+a {
+	text-decoration: none;
+
+	&:active,
+	&:focus {
+		border: 0 none;
+	}
 }

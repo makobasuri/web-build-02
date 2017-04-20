@@ -1,0 +1,54 @@
+/*
+====================================
+== Material list component
+====================================
+*/
+
+$list-border: 1px solid $grey-9;
+$list-subtext: $grey-3;
+
+.material-list {
+	display: flex;
+	align-items: center;
+	height: 72px;
+
+	&+.material-list {
+
+		.list__information {
+			border-top: 0 none;
+		}
+	}
+}
+
+.list--img {
+	margin-right: $base-fs;
+	padding-top: $base-fs * 0.5;
+	padding-bottom: $base-fs * 0.5;
+	border-radius: 50%;
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+}
+
+.list__information {
+	display: flex;
+	flex: 1 1 70%;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: $base-fs * 0.5;
+	padding-bottom: $base-fs * 0.5;
+	border-top: $list-border;
+	border-bottom: $list-border;
+	height: 100%;
+}
+
+.list--text {
+	margin-bottom: $base-fs * 0.5;
+	font-size: $base-fs * 1.25;
+}
+
+.list--subtext {
+	margin-bottom: 0;
+	font-size: $base-fs;
+	color: $list-subtext;
+}

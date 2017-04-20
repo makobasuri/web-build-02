@@ -63,7 +63,7 @@ gulp.task('serve', function () {
 	sync.init({
 		server: {
 			baseDir: "./",
-			index: "video.html"
+			index: "simple-components.html"
 		},
 		files: [
 			'css/*.css',

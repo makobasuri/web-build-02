@@ -20,6 +20,10 @@ p {
 	margin-bottom: $base-fs * 0.5;
 	font-size: $base-fs;
 	line-height: 1.25;
+
+	&.rem {
+		font-size: 1rem;
+	}
 }
 
 h1 {
@@ -28,6 +32,10 @@ h1 {
 	font-size: $h1-fs;
 	font-weight: 700;
 	letter-spacing: 4px;
+
+	&.rem {
+		font-size: 3rem;
+	}
 }
 
 h2 {

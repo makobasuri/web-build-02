@@ -1,0 +1,46 @@
+/*
+====================================
+== MediaTiles with css-grid
+====================================
+*/
+
+.media-tiles {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+		"wide	wide	wide"
+		"mid	.		midtall"
+		"bot	bot		midtall";
+
+	& > * {
+		padding: 0.5rem;
+	}
+}
+
+.media-tiles__tile--wide {
+	grid-area: wide;
+	background-color: $primary;
+}
+
+.media-tiles__tile--middle {
+	grid-area: mid;
+	background-color: $salmon;
+}
+
+.media-tiles__tile--midtall {
+	grid-area: midtall;
+	background-color: $grey-3;
+}
+
+.media-tiles__tile--bottom {
+	grid-area: bot;
+	background-color: $grey-9;
+}
+
+.media-tiles__tile--stacked {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	background-color: $grey-9;
+}

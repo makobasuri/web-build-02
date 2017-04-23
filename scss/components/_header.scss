@@ -20,6 +20,10 @@ header {
 	justify-content: flex-end;
 }
 
+.header-grid {
+	display: grid;
+}
+
 .logo {
 	flex: 2 auto;
 	padding: $base-fs;

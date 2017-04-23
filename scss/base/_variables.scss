@@ -1,3 +1,10 @@
+/*
+====================================
+== Variables
+====================================
+*/
+
+// TODO: check if css-variables
 // Colors
 $primary: rgba(41, 170, 225, 1);
 $dark-grey: rgba(77, 77, 77, 1);
@@ -17,14 +24,14 @@ $m-blck: rgba(10, 10, 10, 1);
 $m-blck-87: rgba(10, 10, 10, 0.87);
 
 // Typography
-$base-font: 'Roboto', sans-serif;
+$base-font: 'Fira Sans', sans-serif;
 $base-fs: 16px;
 $base-line-height: 1.25;
 
 // Media Querries
 
-$medium-width:				601px;
-$large-width: 				901px;
+$medium-width:				600px;
+$large-width: 				900px;
 
 $medium-and-up:				(min-width: #{$medium-width});
 $large-and-up:				(min-width: #{$large-width});

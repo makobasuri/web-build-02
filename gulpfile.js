@@ -63,7 +63,7 @@ gulp.task('serve', function () {
 	sync.init({
 		server: {
 			baseDir: "./",
-			index: "simple-components.html"
+			index: "css-grid.html"
 		},
 		files: [
 			'css/*.css',

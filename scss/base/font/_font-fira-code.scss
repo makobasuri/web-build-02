@@ -1,0 +1,21 @@
+/*
+====================================
+== Fira Code @font-face
+==
+== Weights: 400, 700
+====================================
+*/
+
+@font-face {
+	font-family: 'Fira Code';
+	src: local("FiraCode Regular"), url("../fonts/FiraCode-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Code';
+	src: local("FiraCode Bold"), url("../fonts/FiraCode-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}

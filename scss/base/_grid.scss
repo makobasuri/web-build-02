@@ -7,7 +7,7 @@
 $gr-gutter: 3%;
 
 @mixin container {
-	padding: $base-fs 5%;
+	padding: 1rem 5%;
 
 	@media #{$medium-and-up} {
 		padding-right: 8%;

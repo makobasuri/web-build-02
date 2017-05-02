@@ -1,0 +1,69 @@
+/*
+====================================
+== Header and Navigation with grid
+==
+== Builds on _header.scss
+====================================
+*/
+
+
+// CSS-Grid nav
+.header-grid {
+	display: grid;
+	grid-template-rows: auto;
+
+	.nav {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+
+	.grid-end-top {
+		grid-column: 3;
+	}
+
+	.grid-mid {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.grid-start-bot {
+		grid-row: 3;
+	}
+
+	.grid-end-bot {
+		grid-column: 3;
+		grid-row: 3;
+	}
+}
+
+@media #{$medium-and-up} {
+
+	.header-grid {
+		grid-template-columns: 2fr 2fr;
+
+		.nav {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+			grid-template-rows: unset;
+		}
+
+		.grid-end-top {
+			grid-column: unset;
+		}
+
+		.grid-mid {
+			grid-column: unset;
+			grid-row: unset;
+		}
+
+		.grid-start-bot {
+			grid-row: unset;
+		}
+
+		.grid-end-bot {
+			grid-column: unset;
+			grid-row: unset;
+		}
+	}
+}

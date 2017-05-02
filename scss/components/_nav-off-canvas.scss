@@ -1,0 +1,63 @@
+/*
+====================================
+== Off-canvas Navigation
+====================================
+*/
+
+.with-mobile-nav {
+
+	.nav {
+		display: none;
+	}
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.mobile-nav-switch {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	padding-right: 1rem;
+	color: $pure-white;
+	cursor: pointer;
+
+	i {
+		margin-right: 0.5rem;
+	}
+}
+
+.nav--off-canvas {
+	display: none;
+
+	.nav-item {
+		display: none;
+	}
+
+	& + .nav {
+		display: none;
+	}
+}
+
+@media #{$medium-and-up} {
+
+	.with-mobile-nav {
+
+		.nav {
+			display: flex;
+		}
+	}
+
+	.mobile-nav-switch {
+		display: none;
+	}
+
+	.nav--off-canvas {
+		display: none;
+
+		& + .nav {
+			display: flex;
+		}
+	}
+}

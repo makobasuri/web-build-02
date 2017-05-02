@@ -1,7 +1,7 @@
 {
   "name": "web-build-01",
-  "version": "1.0.0",
-  "description": "Simple gulp builder for Websites using html5 boilerplate with a bunch of tools for css (running sass) optimization, along with imagemin and uglify.",
+  "version": "1.1.0",
+  "description": "Simple build tool with some components ready to experiment with. Comes with some sass goodies and autoreload.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "front-end",
     "simple",
     "gulp",
-    "build",
+    "buildsystem",
     "sass",
     "sourcemaps",
     "uglify",

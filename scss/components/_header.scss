@@ -20,13 +20,9 @@ header {
 	justify-content: flex-end;
 }
 
-.header-grid {
-	display: grid;
-}
-
 .logo {
 	flex: 2 auto;
-	padding: $base-fs;
+	padding: 1rem;
 
 	img {
 		height: 48px;
@@ -34,7 +30,7 @@ header {
 }
 
 .nav {
-	flex: 1;
+	flex: 1 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -46,7 +42,7 @@ header {
 	flex-wrap: nowrap;
 	justify-content: center;
 	position: relative;
-	padding-bottom: $base-fs;
+	padding-bottom: 1rem;
 	height: 100%;
 	font-size: 16px;
 	font-weight: 400;
@@ -123,8 +119,7 @@ header {
 	}
 
 	.nav-item {
-		padding-top: $base-fs;
-		padding-bottom: $base-fs;
+		padding: 1rem 0;
 		width: auto;
 		min-width: 120px;
 	}

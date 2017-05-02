@@ -7,13 +7,18 @@
 .media-tiles {
 	display: grid;
 	grid-gap: 1rem;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr;
 	grid-template-areas:
-		"wide	wide	wide"
-		"mid	.		midtall"
-		"bot	bot		midtall";
+		"wide"
+		"mid"
+		"midtall"
+		"bot"
+		"bot-under";
 
 	& > * {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		padding: 0.5rem;
 	}
 }
@@ -39,8 +44,26 @@
 }
 
 .media-tiles__tile--stacked {
-	grid-column-start: 2;
-	grid-column-end: 3;
-	grid-row-start: 1;
+	grid-area: bot-under;
 	background-color: $grey-9;
+}
+
+@media #{$medium-and-up} {
+
+	.media-tiles {
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+			"wide	wide	wide"
+			"mid	.		midtall"
+			"bot	bot		midtall";
+	}
+
+	.media-tiles__tile--stacked {
+		grid-area: unset;
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+	}
 }

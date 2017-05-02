@@ -27,11 +27,6 @@ gulp.task('normalize', function(){
 	.pipe(gulp.dest('css/vendors'))
 });
 
-gulp.task('fonts', function() {
-	return gulp.src('node_modules/mdi/fonts/*.*')
-	.pipe(gulp.dest('fonts'))
-});
-
 //Styles task
 gulp.task('styles', function(){
 	return gulp.src('scss/**/*.scss')
@@ -47,6 +42,7 @@ gulp.task('styles', function(){
 //Uglify task
 gulp.task('uglify', function(){
 	return gulp.src([
+		'js/navigation.js',
 		'js/video.js',
 		'js/main.js'
 	])
@@ -63,7 +59,7 @@ gulp.task('serve', function () {
 	sync.init({
 		server: {
 			baseDir: "./",
-			index: "css-grid.html"
+			index: "off-canvas-nav.html"
 		},
 		files: [
 			'css/*.css',
@@ -121,9 +117,9 @@ gulp.task('copy', function(){
 //Build task
 gulp.task('build', function(cb) {
 	rseq('clean',
-	['normalize', 'fonts', 'styles', 'uglify', 'image',],
+	['normalize', 'styles', 'uglify', 'image'],
 	'copy', cb)
 });
 
 //Default task
-gulp.task('default', ['normalize', 'fonts', 'uglify', 'styles', 'watch', 'serve']);
+gulp.task('default', ['normalize', 'uglify', 'styles', 'watch', 'serve']);

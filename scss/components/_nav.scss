@@ -1,0 +1,90 @@
+/*
+====================================
+== Navigation
+====================================
+*/
+
+$nav-item-link: $m-wht-87;
+$nav-item-hover: $grey-c;
+$nav-item-focus: $pure-white;
+$nav-transition: 0.2s ease-in-out;
+
+.nav {
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-item {
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	position: relative;
+	padding: 0.5em 0 1em;
+	height: 100%;
+	font-size: 1rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $nav-item-link;
+	transition: color $nav-transition;
+
+	&::before {
+		content: '';
+		position: absolute;
+		right: 50%;
+		bottom: 0;
+		left: 50%;
+		height: 4px;
+		background-color: $nav-item-hover;
+		transition: left $nav-transition, right $nav-transition;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: 50%;
+		bottom: 0;
+		left: 50%;
+		height: 4px;
+		background-color: $nav-item-focus;
+		transition: left $nav-transition, right $nav-transition;
+	}
+
+	&:hover {
+		color: $nav-item-hover;
+
+		&::before {
+			right: 0%;
+			left: 0%;
+		}
+	}
+
+	&:focus,
+	&:active {
+		color: $nav-item-focus;
+
+		&::after {
+			right: 0;
+			left: 0;
+		}
+	}
+}
+
+.nav--wrap {
+
+	.nav-item {
+		flex-wrap: wrap;
+	}
+}
+
+@media #{$medium-and-up} {
+
+	.nav-item {
+		padding: 0.5em;
+	}
+}

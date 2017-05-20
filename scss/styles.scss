@@ -6,18 +6,17 @@
 
 @import 'base/variables';
 @import 'base/settings';
-@import 'base/typo-system';
 @import 'base/materialshadows';
 @import 'base/grid';
-@import 'base/grid-classes';
+// @import 'base/grid-classes';
 @import 'base/typography';
-
-@import 'node_modules/mdi/scss/materialdesignicons';
+// @import 'base/print';
 
 // Components
 @import 'components/general';
 @import 'components/hero';
 @import 'components/header';
+@import 'components/nav';
 @import 'components/header-css-grid'; // with CSS-Grid
 @import 'components/nav-off-canvas';
 @import 'components/features';
@@ -25,6 +24,4 @@
 @import 'components/card';
 @import 'components/material-list';
 @import 'components/media-tiles'; // with CSS-Grid
-
-// Elements
-@import 'elements/buttons';
+@import 'components/buttons';

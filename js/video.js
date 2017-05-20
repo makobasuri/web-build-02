@@ -22,7 +22,7 @@ var VideoPlayer = function(element) {
 			this.playPauseButton.firstElementChild.classList.remove('mdi-stop');
 			this.playPauseButton.firstElementChild.classList.add('mdi-arrow-right-drop-circle');
 		}
-	}.bind(this)
+	}.bind(this);
 
 	this.toggleWhenEnded = function() {
 		this.playPauseButton.firstElementChild.classList.remove('mdi-stop');
@@ -47,7 +47,7 @@ var VideoPlayer = function(element) {
 		var totalProgress = this.progressBar.clientWidth;
 		var calcProgress = Math.floor((100 / totalProgress) * progressClicked);
 
-		this.video.currentTime = calcProgress * (video.duration / 100);
+		this.video.currentTime = calcProgress * (this.video.duration / 100);
 		this.updateProgressBar();
 	}.bind(this);
 

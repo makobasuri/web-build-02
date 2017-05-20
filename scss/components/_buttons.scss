@@ -1,0 +1,55 @@
+/*
+====================================
+== Buttons
+====================================
+*/
+
+$btn-light-color: #333;
+$btn-light-bg-color: #ccc;
+$btn-light-hover-color: #111;
+$btn-light-hover-bg-color: #fff;
+
+$btn-dark-color: #ccc;
+$btn-dark-bg-color: #333;
+$btn-dark-hover-color: #fff;
+$btn-dark-hover-bg-color: #111;
+
+button {
+	border: 0 none;
+	background: none;
+}
+
+.btn {
+	border-radius: 1em * 0.25;
+	margin: 0.5em;
+	padding: 1em 1.5em;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.btn--dark {
+	@include z-depth(1);
+	color: $btn-dark-color;
+	background-color: $btn-dark-bg-color;
+
+	&:hover {
+		@include z-depth(3);
+		color: $btn-dark-hover-color;
+		background-color: $btn-dark-hover-bg-color;
+	}
+}
+
+.btn--light {
+	@include z-depth(1);
+	color: $btn-light-color;
+	background-color: $btn-light-bg-color;
+
+	&:hover {
+		@include z-depth(3);
+		color: $btn-light-hover-color;
+		background-color: $btn-light-hover-bg-color;
+	}
+}

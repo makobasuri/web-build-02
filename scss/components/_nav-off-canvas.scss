@@ -29,7 +29,6 @@
 }
 
 .nav--off-canvas {
-	display: none;
 
 	.nav-item {
 		display: none;
@@ -54,7 +53,6 @@
 	}
 
 	.nav--off-canvas {
-		display: none;
 
 		& + .nav {
 			display: flex;

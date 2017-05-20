@@ -10,19 +10,15 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<header>
-		<div class="header-flex">
+	<header class="header">
 			<div class="logo">
 				<img src="img/mmakobasurilogo4.png" alt="makobasuri's logo">
 			</div>
-			<nav class="nav nav--wrap">
+			<nav class="nav">
 				<a class="nav-item" href="#">Portfolio</a>
 				<a class="nav-item" href="#">About</a>
 				<a class="nav-item" href="#">Contact</a>
-				<a class="nav-item" href="#">Stuff</a>
-				<a class="nav-item" href="#">Impressum</a>
 			</nav>
-		</div>
 	</header>
 	<main>
 		<div class="hero-background hero--components">
@@ -62,6 +58,9 @@
 					<p class="list--subtext">Subtext</p>
 				</div>
 			</div>
+			<button class="btn">Button</button>
+			<button class="btn btn--dark"><div class="test"></div>Button</button>
+			<button class="btn btn--light">Button</button>
 			<div>
 				<div class="flowing-copy">
 					<h1>Title</h1>
@@ -77,6 +76,31 @@
 				</div>
 			</div>
 
+			<div class="module-video">
+				<video>
+					<source src="assets/small.mp4" type="video/mp4" alt="video from techslides.com" />
+				</video>
+				<div class="video--controls">
+					<button class="vc-play">
+						<span class="mdi mdi-24px mdi-arrow-right-drop-circle">P</span>
+					</button>
+					<div class="vc-progress-bar">
+						<span class="vc-progress-bar--fill">0% Played</span>
+					</div>
+					<button class="vc-sound">
+						<span class="mdi mdi-24px mdi-volume-high">V</i>
+					</button>
+					<div class="vc-volume-bar">
+						<div class="volume-bar-bckg"></div>
+						<span class="vc-volume-bar--fill">0% Volume</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="module-test">
+				<button class="btn btn--dark">Click</button>
+				<p class="is-off">Now you see me</p>
+			</div>
 	</main>
 
 	<script src="minjs/scripts.js"></script>
